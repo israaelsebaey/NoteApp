@@ -1,0 +1,16 @@
+<div class="content" >
+    <div class="input-group">
+        <input class="form-control" placeholder="Notes" #inputREF [(ngModel)]="inputVale"/>
+        <button class="btn" (click)="Add(inputREF.value)">+</button>
+    </div>
+   
+    <div class="todoContent" >  
+        <div *ngFor="let item of list" class="rowStyle" >              
+            <span>{{item.name}}</span>
+            <input type="button" class="btn btn-danger" value="-" (click)="Delete(item.id)"/>     
+        </div>          
+        <div *ngIf="list.length<=1" class="noItems">
+            <p>{{text}}</p>
+        </div>       
+    </div>  
+</div>
